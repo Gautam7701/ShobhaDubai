@@ -39,29 +39,31 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Navigation Links */}
-        <ul className={`md:hidden flex flex-col items-center absolute top-16 text-white gap-5 cursor-pointer right-40 w-full  bg-black/40 ${isMenuOpen ? 'flex' : 'hidden'} h-[calc(100vh-64px)]`}>
+        <ul className={`md:hidden flex flex-col items-center absolute top-16 text-white gap-8 p-10 cursor-pointer right-40 w-full  bg-black/30 ${isMenuOpen ? 'flex' : 'hidden'} h-[calc(100vh-64px)]`}>
           <li className="hover:text-[#C0A062] cursor-pointer"><a href="#home">Home</a></li>
           <li className="hover:text-[#C0A062] cursor-pointer"><a href="#about">About</a></li>
           <li className="hover:text-[#C0A062] cursor-pointer"><a href="#projects">Projects</a></li>
           <li className="hover:text-[#C0A062] cursor-pointer"><a href="#contact">Contact</a></li>
           <li className="hover:text-[#C0A062] cursor-pointer"><a href="#gallery">Gallery</a></li>
         </ul>
-        {/* Mobile Navigation + Buttons */}
-
-
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <button className="bg-[#C0A062] text-black text-sm px-4 py-2 rounded hover:bg-[#b2924f] transition">
+          {/* "Download Brochure" button visible only on desktop */}
+          <button className="bg-[#C0A062] text-black text-sm px-4 py-2 rounded hover:bg-[#b2924f] transition md:flex hidden">
             Download Brochure
           </button>
-          <button className="border border-[#C0A062] text-[#C0A062] text-sm px-4 py-2 rounded hover:bg-[#C0A062] hover:text-black transition">
+          
+          {/* "Get in Touch" button visible only on mobile */}
+          <button className="border border-[#C0A062] text-[#111111] text-sm px-4 py-2 rounded bg-[#C0A062] hover:text-black transition md:hidden">
+            Get in Touch
+          </button>
+
+          {/* "Get in Touch" button visible on desktop */}
+          <button className="border border-[#C0A062] text-[#C0A062] text-sm px-4 py-2 rounded hover:bg-[#C0A062] hover:text-black transition md:flex hidden">
             Get in Touch
           </button>
         </div>
-        {/* Desktop Buttons */}
-
-
       </nav>
     </div>
   );
